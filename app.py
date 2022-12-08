@@ -4,24 +4,27 @@ from datetime import datetime
 
 app = Flask(__name__)
 
-
+#return main index page
 @app.route("/")
 def home():
     return render_template("index.html")
 
-
+#return room index page
 @app.route("/<room>")
 def roomMsg(room):
      return render_template("index.html")
 
+#Get Spesific room message and post
 @app.route("/api/chat/<room>", methods=["POST", "GET"])
 def getMessages(room):
     if request.method == "POST":
+        #Gets data from The Post Request, Create a simple format with date
         user = request.form["username"]
         message = request.form["msg"]
         now = datetime.now()
         date_time_str = now.strftime("%Y-%m-%d %H:%M:%S")
         current_message = f"[{date_time_str}] {user}: {message}"
+        #Check if file exists
         if os.path.isfile(f"rooms/{room}.txt"):
             with open(f"rooms/{room}.txt",'a') as file:
                 file.write(f"{current_message}\n")
