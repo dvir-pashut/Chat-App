@@ -12,12 +12,7 @@ def home():
 
 @app.route("/<room>")
 def roomMsg(room):
-    #  return f"Room {room}!"
-     
      return render_template("index.html")
-
-     #return redirect(url_for("home"))
- #   
 
 @app.route("/api/chat/<room>", methods=["POST", "GET"])
 def getMessages(room):
@@ -38,13 +33,13 @@ def getMessages(room):
     else:
         if os.path.isfile(f"rooms/{room}.txt"):
             with open(f"rooms/{room}.txt") as file:
-                #content = file.read()
                 content = ""
                 for line in file:
                     content += f"{line}"
                 return content
         else:
             return "No such room Yet"
+
 
 
 if __name__ == "__main__":
