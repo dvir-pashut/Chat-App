@@ -38,7 +38,7 @@ def getMessages(room):
                     content += f"{line}"
                 return content
         else:
-            return "No such room Yet"
+            return "No Chat Yet - You Welcome To send The First Message"
 
 
 
