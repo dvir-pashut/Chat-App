@@ -29,8 +29,6 @@ def insert_message_to_table(table_name,message):
     cursor.execute(f"INSERT INTO {table_name} (message) VALUES ('{message}');")
 
 
-
-
 #return all the data from the mysql from a specific room
 def get_messages(room_name):
     #check if the room(table) exists: 
@@ -51,9 +49,6 @@ def get_messages(room_name):
     cnx.close()
 
 
-
-
-    
 def post_message(room_name,message):
     db_connect()
     if check_table_existence(room_name):
