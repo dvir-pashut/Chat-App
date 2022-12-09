@@ -14,8 +14,8 @@ RUN pip install -r requirements.txt
 EXPOSE 5000
 
 
-#Run the database module
-CMD [ "python", "dbconnection.py" ]
+# #Run the database module
+# CMD [ "python", "dbconnection.py" ]
 
 # Run app.py when the container launches
-ENTRYPOINT ["python", "app.py"]
+ENTRYPOINT [ "python", "app.py"]

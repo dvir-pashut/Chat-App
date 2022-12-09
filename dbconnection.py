@@ -5,7 +5,8 @@ def db_connect():
     global cnx
     global cursor
     cnx = mysql.connector.connect(
-    host="localhost",
+    #mysql container ip 
+    host="172.19.0.3",
     user="root",
     password="password"
     )   
@@ -13,7 +14,10 @@ def db_connect():
     
 #Creates the initial database table - Should run only once
 def DB_INITIALIZATION():
+    db_connect()
     cursor.execute("CREATE DATABASE chatapp;")
+    cnx.commit()
+    cnx.close()
     
 
 def check_table_existence(table_name):

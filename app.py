@@ -2,6 +2,7 @@ from flask import Flask, render_template, redirect, url_for, request
 import os.path
 from datetime import datetime
 import dbconnection
+import time
 
 app = Flask(__name__)
 
@@ -23,6 +24,7 @@ def getMessages(room):
         user = request.form["username"]
         message = request.form["msg"]
         now = datetime.now()
+        #Formatting the message and sending it to post to the DB
         date_time_str = now.strftime("%Y-%m-%d %H:%M:%S")
         current_message = f"[{date_time_str}] {user}: {message}"
         dbconnection.post_message(f"room{room}",current_message)
@@ -35,4 +37,9 @@ def getMessages(room):
 
 
 if __name__ == "__main__":
+    try:
+        dbconnection.DB_INITIALIZATION()
+    except:
+        time.sleep(15)
+        dbconnection.DB_INITIALIZATION()
     app.run(host='0.0.0.0')
