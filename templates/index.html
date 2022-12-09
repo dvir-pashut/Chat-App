@@ -1,4 +1,45 @@
   <html>
+    <head>
+      <style>
+ body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+    }
+    form#inform {
+      padding: 20px;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    form#inform input {
+      margin: 0 10px;
+      padding: 5px 10px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+    form#inform input[type="button"] {
+      background-color: #0084ff;
+      color: #fff;
+      cursor: pointer;
+    }
+    form#inform input[type="button"]:hover {
+      background-color: #0073e6;
+    }
+    #chatbox {
+      padding: 20px;
+      margin: 0;
+      width: 100%;
+      height: calc(100vh - 90px);
+      box-sizing: border-box;
+      overflow-y: scroll;
+    }
+        
+      </style>
+    </head>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script>
     function room() {

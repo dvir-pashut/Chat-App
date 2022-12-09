@@ -1,11 +1,19 @@
 import mysql.connector
 
+#Connection to db using the connector
+
+def db_connect():
+    pass
+    
+
 cnx = mysql.connector.connect(
     host="localhost",
     user="root",
     password="password"
 )
 cursor = cnx.cursor()
+
+
 
 #table name wiil  be : general,room1,room2,room3,room4....)
 
@@ -16,10 +24,13 @@ cursor = cnx.cursor()
 
 msg="[2022-12-08 15:57:53] Benny: ITWORKS"
 
+
+
+
 def DB_INITIALIZATION():
     cursor.execute("CREATE DATABASE chatapp;")
     
-
+    
 cursor.execute("USE chatapp;")
 cursor.execute("SHOW TABLES LIKE 'room1'")
 if cursor.fetchone():
