@@ -1,10 +1,9 @@
 # Chat-App-DevOps Training
-## Description
-- Chat Service with rooms, built using Flask.
-- Dockerized using python-slim image
 
-## What is the Chat service?
-The service exposes three apis:
+This repository contains a chat service application built using Flask and MySQL. The application allows users to send and receive messages in real-time.
+
+## About the Service:
+### The service exposes three apis:
 1. `GET /<room>` - Will return the static HTML (provided to you), regardless of the room provided.
 2. `POST /chat/<room>` - Accepts a chat line from a user:
    - Will accept 2 form fields - username & message.
@@ -15,10 +14,25 @@ The service exposes three apis:
 
 
 
-## How to run
-- Make sure docker is installed
-- Run init_app.sh
-- Acess localhost:80
+## Running the Project
+To run the project, follow these steps:
+
+1. Clone the repository to your local machine:
+    ```
+    git clone https://github.com/elior7557/Chat-App.git
+    ```
+2. Change into the project directory:
+   ```
+   cd Chat-App
+   ```
+3. Run the init_app.sh script to start the application:
+      ```
+   ./init.sh
+   ```
+
+   This script will start the Flask and MySQL containers and run the necessary setup steps to create the database and tables.
+
+4.  Once the script has finished running, you can access the application by visiting http://localhost:80 in your web browser.
 
 enjoy:) !
 
