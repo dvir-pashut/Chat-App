@@ -1,6 +1,7 @@
 from flask import Flask, render_template, redirect, url_for, request
 import os.path
 from datetime import datetime
+import dbconnection
 
 app = Flask(__name__)
 
@@ -34,14 +35,17 @@ def getMessages(room):
         return redirect(url_for("getMessages",room=room))
     #GET request    
     else:
-        if os.path.isfile(f"rooms/{room}.txt"):
-            with open(f"rooms/{room}.txt") as file:
-                content = ""
-                for line in file:
-                    content += f"{line}"
-                return content
-        else:
-            return "No Chat Yet - You Welcome To send The First Message"
+        # if os.path.isfile(f"rooms/{room}.txt"):
+        #     with open(f"rooms/{room}.txt") as file:
+        #         content = ""
+        #         for line in file:
+        #             content += f"{line}"
+        #         return content
+        result = dbconnection.get_messages(room)
+        return result
+        
+        # else:
+        #     return "No Chat Yet - You Welcome To send The First Message"
 
 
 
