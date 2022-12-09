@@ -25,27 +25,12 @@ def getMessages(room):
         now = datetime.now()
         date_time_str = now.strftime("%Y-%m-%d %H:%M:%S")
         current_message = f"[{date_time_str}] {user}: {message}"
-        #Check if file exists
-        if os.path.isfile(f"rooms/{room}.txt"):
-            with open(f"rooms/{room}.txt",'a') as file:
-                file.write(f"{current_message}\n")
-        else:
-            with open(f"rooms/{room}.txt",'w') as file:
-                file.write(f"{current_message}\n")
+        dbconnection.post_message(f"room{room}",current_message)
         return redirect(url_for("getMessages",room=room))
     #GET request    
     else:
-        # if os.path.isfile(f"rooms/{room}.txt"):
-        #     with open(f"rooms/{room}.txt") as file:
-        #         content = ""
-        #         for line in file:
-        #             content += f"{line}"
-        #         return content
-        result = dbconnection.get_messages(room)
+        result = dbconnection.get_messages(f"room{room}")
         return result
-        
-        # else:
-        #     return "No Chat Yet - You Welcome To send The First Message"
 
 
 

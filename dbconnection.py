@@ -26,7 +26,7 @@ def check_table_existence(table_name):
 
 def insert_message_to_table(table_name,message):
     cursor.execute("USE chatapp;")
-    cursor.execute(f"INSERT INTO {table_name} (message) VALUES ('{msg}');")
+    cursor.execute(f"INSERT INTO {table_name} (message) VALUES ('{message}');")
 
 
 
@@ -66,14 +66,17 @@ def post_message(room_name,message):
     cnx.commit()
     cnx.close()
 
+if __name__ == "__main__":
+    DB_INITIALIZATION()
 
     
 
 #Testin the Code:
 # db_connect()  
-room_name = "room8"
-msg="[2022-12-08 15:57:53] Benny: ITWORKS??"
-post_message(room_name,msg)
-get_messages(room_name)
+def test():
+    room_name = "room12"
+    msg="[2022-12-08 15:57:53] Benny: ITWORKS??"
+    post_message(room_name,msg)
+    get_messages(room_name)
 
 
