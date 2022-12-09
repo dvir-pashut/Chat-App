@@ -18,7 +18,9 @@ The service exposes three apis:
 ## How to run
 - Make sure docker is installed
 - Run init_app.sh
+- Acess localhost:80
 
+enjoy:) !
 
 
 
