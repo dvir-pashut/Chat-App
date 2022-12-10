@@ -37,9 +37,9 @@ def getMessages(room):
 
 
 if __name__ == "__main__":
-    try:
-        dbconnection.DB_INITIALIZATION()
-    except:
-        time.sleep(15)
-        dbconnection.DB_INITIALIZATION()
+    # try:
+    #     dbconnection.DB_INITIALIZATION()
+    # except:
+    #     time.sleep(15)
+    #     dbconnection.DB_INITIALIZATION()
     app.run(host='0.0.0.0')

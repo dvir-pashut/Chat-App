@@ -6,7 +6,7 @@ def db_connect():
     global cursor
     cnx = mysql.connector.connect(
     #mysql container ip 
-    host="172.19.0.3",
+    host="db",
     user="root",
     password="password"
     )   
