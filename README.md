@@ -25,14 +25,20 @@ To run the project, follow these steps:
    ```
    cd Chat-App
    ```
-3. Run the init_app.sh script to start the application:
+3. Run the docker compose to start the application:
       ```
-   ./init.sh
+   docker compose up -d
    ```
 
    This script will start the Flask and MySQL containers and run the necessary setup steps to create the database and tables.
 
 4.  Once the script has finished running, you can access the application by visiting http://localhost:80 in your web browser.
+
+
+## App Architecture 
+
+![App Architecture ](./chatapp-architecture.png)
+
 
 enjoy:) !
 
