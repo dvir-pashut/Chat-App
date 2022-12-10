@@ -3,18 +3,22 @@ import os.path
 from datetime import datetime
 import dbconnection
 import time
+# To pring the server HOSTNAME
+import socket
 
 app = Flask(__name__)
-
+hostname = socket.gethostname()
 #return main index page
 @app.route("/")
 def home():
-    return render_template("index.html")
+    return render_template("index.html",hostname=hostname)
+
 
 #return room index page
 @app.route("/<room>")
 def roomMsg(room):
-     return render_template("index.html")
+     print(f"Host Name is: {hostname}")
+     return render_template("index.html",hostname=hostname)
 
 #Get Spesific room message and post
 @app.route("/api/chat/<room>", methods=["POST", "GET"])

@@ -65,8 +65,8 @@ def post_message(room_name,message):
     cnx.commit()
     cnx.close()
 
-if __name__ == "__main__":
-    DB_INITIALIZATION()
+# if __name__ == "__main__":
+#     DB_INITIALIZATION()
 
     
 
