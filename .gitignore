@@ -2,3 +2,4 @@ myenv
 rooms
 __pycache__
 clean.sh
+init_app.sh
